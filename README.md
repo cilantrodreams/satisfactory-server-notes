@@ -21,7 +21,7 @@ Notes on setting up a dedicated satisfactory server hosted in a data center. The
 1. Select Ubuntu newest LTS for OS image and add your ssh key from earlier to it.
 1. Select Flexible instance under instance configuration. Flex option locks the storage at 50Gb, but will allow you to downgrade your instance instead of having to remake it entirely. A satisfactory server will easily fit in the instance.
 1. Under Configure your network select public mode
-1. Select hourly or monthly billing period.
+1. Select hourly billing period.
 1. Create the instance.
 1. Go to the instance dashboard and copy the login information under the Networks column. Paste it into terminal and enter the passphrase for your private key
 1. Change the password of the user account
