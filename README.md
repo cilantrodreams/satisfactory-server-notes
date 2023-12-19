@@ -3,7 +3,7 @@
 Notes on setting up a dedicated satisfactory server hosted in a data center. The server is deployed and managed with LinuxGSM and hosted on OVHCloud public cloud.
 
 ## System Requirements
-| Syntaxs | Description |
+|  |  |
 | - | - |
 | Processor | Recent (comparable to the i5-3570 [Intel] or Ryzen 5 3600 [AMD] or better) x86/64 (AMD/Intel) processor. No 32 bit or ARM support. The server favours higher single-core performance over multiple cores. |
 | Memory | 12GB minimum, 16GB RAM is recommended for larger saves or to host more than 4 players. |
