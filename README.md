@@ -28,6 +28,21 @@ Notes on setting up a dedicated satisfactory server hosted in a data center. The
 
     `sudo passwd ubuntu`
 
+## Setting up OpenStack API on server instance
+OpenStack tools are used to manage OVHCloud instances from the system console. WIll be used later to automate management of the instance using scripts.
+[Documentation from OVHCloud](https://help.ovhcloud.com/csm/en-public-cloud-compute-prepare-openstack-api-environment?id=kb_article_view&sysparm_article=KB0050988)
+[OpenStack API documentation](https://docs.openstack.org/python-openstackclient/latest/)
+1. SSH into instance and run `apt update`
+1. Use commands below to install OpenStack client
+```
+apt install python3-pip python3-venv
+python3 -m venv env
+source env/bin/activate
+pip3 install --upgrade pip
+pip3 install python-openstackclient
+```
+1. Openstack is now ready to use. You can exit env by using command `deactivate`
+
 ## Deploying Satisfactory game server using LinuxGSM
 [LinuxGSN page for Satisfactory] (https://linuxgsm.com/servers/sfserver/)
 1. Install all required dependencies
