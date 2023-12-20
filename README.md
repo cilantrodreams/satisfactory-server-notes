@@ -11,7 +11,7 @@ Notes on setting up a dedicated satisfactory server hosted in a data center. The
 | Operaating System | Any currently supported version of Windows or major Linux distribution. Out-of-support OSs such as Windows 7 are explicitly not supported. |
 | Internet Connection | Broadband internet connection. Hosting from home will require the ability to configure port forwarding. |
 
-## Setting up server
+## Setting up server on OVHCloud
 [Guide from OVHCloud documentation](https://help.ovhcloud.com/csm/en-gb-public-cloud-compute-getting-started?id=kb_article_view&sysparm_article=KB0051017)
 1. Create an account on OVHCloud with a new project
 1. Add SSH public key to the project
@@ -27,3 +27,51 @@ Notes on setting up a dedicated satisfactory server hosted in a data center. The
 1. Change the password of the user account
 
     `sudo passwd ubuntu`
+
+## Deploying Satisfactory game server using LinuxGSM
+[LinuxGSN page for Satisfactory] (https://linuxgsm.com/servers/sfserver/)
+1. Install all required dependencies
+
+    For Ubuntu versions greater than 20.10
+
+    `sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd
+`
+1. Install additional module GameDig. GameDig is a tool to monitor game servers
+
+    [GameDig installation instructions from LinuxGSM documentation] (https://docs.linuxgsm.com/requirements/gamedig?_ga=2.241630212.747431594.1703013593-999399711.1702833779&_gl=1*llpn32*_ga*OTk5Mzk5NzExLjE3MDI4MzM3Nzk.*_ga_QTLEDYPYK9*MTcwMzA2MDgxNC42LjAuMTcwMzA2MDgxNC4wLjAuMA..)
+
+    Install the latest version of nvm
+
+    `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+
+    Verify it has been installed
+
+    `command -v nvm`
+
+    It should output `nvm`. If not, close the current terminal, open a new one and try again.
+
+    Install the latest version of node using nvm
+
+    `nvm install node`
+
+    Once node is installed, use npm to install GameDig
+
+    `npm install gamedig -g`
+
+1. Install Satisfactory dedicated server with the following steps
+
+    Create a user and login
+
+    `adduser sfuser`
+
+    Set a strong password for security best practices
+
+    `su - sfserver`
+
+    Download linuxgsm.sh
+
+    `wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh sfserver`
+
+    Run the installer and follow on screen instuctions
+
+    `./sfserver install`
